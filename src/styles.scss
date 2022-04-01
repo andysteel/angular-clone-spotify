@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variaveis.scss';
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $cor-fundo;
+}
+
+.flex {
+  display: flex;
+  &-center {
+    justify-content: center;
+    align-items: center;
+  }
+}
