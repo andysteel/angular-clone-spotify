@@ -19,3 +19,27 @@ html, body {
     align-items: center;
   }
 }
+
+.titulo {
+  color: $cor-primaria;
+  display: block;
+  font-weight: 700;
+  &-bg {
+    @extend .titulo;
+    font-size: 2.2rem;
+  }
+
+  &-md {
+    @extend .titulo;
+    font-size: 1.4rem;
+  }
+}
+
+.mt {
+
+  @for $i from 1 to 9 {
+    &-#{ $i } {
+      margin-top: #{ $i }vh;
+    }
+  }
+}
