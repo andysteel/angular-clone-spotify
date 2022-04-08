@@ -1,0 +1,12 @@
+@import 'variaveis';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 18rem;
+  min-width: 18rem;
+  padding: 40px 20px 20px 20px;
+  background-color: $branco;
+}
