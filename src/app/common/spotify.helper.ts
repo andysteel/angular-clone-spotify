@@ -2,6 +2,7 @@ import { IArtista } from "../interfaces/IArtista";
 import { IMusica } from "../interfaces/IMusica";
 import { IPlaylist } from "../interfaces/IPlaylist";
 import { IUsuario } from "../interfaces/IUsuario";
+import { newMusica } from "./util.factory";
 
 export function SpotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileResponse): IUsuario {
 
@@ -31,6 +32,10 @@ export function SpotifyArtistaParaArtista(artista: SpotifyApi.ArtistObjectFull):
 }
 
 export function SpotifyMusicaParaMusica(musica: SpotifyApi.TrackObjectFull): IMusica {
+
+  if(!musica) {
+    return newMusica();
+  }
 
   return {
     id: musica.uri,
