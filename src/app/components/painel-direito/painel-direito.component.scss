@@ -3,10 +3,12 @@
 :host {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  max-height: 100vh;
+  max-height: 97vh;
   max-width: 18rem;
   min-width: 18rem;
-  padding: 40px 20px 20px 20px;
-  background-color: $branco;
+  padding: 20px 20px 0px 20px;
+
+  .player {
+    flex-grow: 1;
+  }
 }

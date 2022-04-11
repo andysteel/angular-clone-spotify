@@ -98,6 +98,26 @@ export class SpotifyService {
     return SpotifyMusicaParaMusica(musica.item)
   }
 
+  async voltarMusica(){
+    await this.spotifyApi.skipToPrevious();
+  }
+
+  async proximaMusica() {
+    await this.spotifyApi.skipToNext();
+  }
+
+  async pausaMusica() {
+    await this.spotifyApi.pause();
+  }
+
+  async tocaMusica() {
+    await this.spotifyApi.play();
+  }
+
+  async cadastrarPlayer() {
+    await this.spotifyApi.transferMyPlayback([`${SpotifyConfiguration.clientID}`], {play: true});
+  }
+
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);

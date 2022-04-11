@@ -9,6 +9,7 @@ $h-desconsiderar: calc($h-spotify-logo + $h-menu-opcoes + $h-footer-user);
 :host {
   max-width: 19rem;
   min-height: 100vh;
+  max-height: 100vh;
   overflow-y: hidden;
   display: flex;
   flex-direction: column;

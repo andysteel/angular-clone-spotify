@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   async obterMusicas() {
     const musicas = await this.spotifyService.buscarMusicas();
     this.musicas = musicas;
-    console.log(this.musicas);
   }
 
   obterArtista(musica: IMusica) {

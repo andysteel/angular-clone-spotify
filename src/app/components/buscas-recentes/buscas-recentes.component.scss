@@ -1,0 +1,46 @@
+@import 'variaveis';
+
+:host {
+  input {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 8px;
+    border-color: $preto-transparente-30;
+    outline: none;
+    color: $cor-primaria;
+    font-size: 1rem;
+    font-weight: 500;
+
+    &::placeholder {
+      color: $preto-transparente-30;
+      font-size: .85rem;
+    }
+
+    &:focus, &:active {
+      border-color: $cor-primaria;
+      border-width: 2px;
+    }
+  }
+
+  .sugestoes {
+    flex-wrap: wrap;
+
+    span {
+      background-color: $branco;
+      margin-right: 5px;
+      padding: 7px 10px;
+      color: $preto-transparente-70;
+      border: 1px solid $preto-transparente-30;
+      margin-top: 10px;
+      border-radius: 20px;
+      font-size: .9rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($color: $cor-primaria, $alpha: .5);
+        color: $branco;
+        border: 1px solid rgba($color: $cor-primaria, $alpha: .5);
+      }
+    }
+  }
+}
