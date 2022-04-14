@@ -1,0 +1,30 @@
+@import 'table';
+
+:host{
+  display: flex;
+  justify-content: space-between;
+
+  ::-webkit-scrollbar {
+    width: 7px;
+
+    &-thumb {
+      background-color: rgba($color: $cor-primaria, $alpha: 0.6);
+      border-radius: 10px;
+    }
+
+    &-track {
+      background: transparent;
+    }
+  }
+
+  .painel-direito {
+    height: 100vh;
+  }
+
+  .lista {
+    padding: 0px 50px;
+    width: 100%;
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+}

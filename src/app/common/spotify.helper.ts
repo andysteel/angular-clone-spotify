@@ -2,7 +2,7 @@ import { IArtista } from "../interfaces/IArtista";
 import { IMusica } from "../interfaces/IMusica";
 import { IPlaylist } from "../interfaces/IPlaylist";
 import { IUsuario } from "../interfaces/IUsuario";
-import { newMusica } from "./util.factory";
+import { newArtista, newMusica, newPlaylist } from "./util.factory";
 
 export function SpotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileResponse): IUsuario {
 
@@ -47,6 +47,34 @@ export function SpotifyMusicaParaMusica(musica: SpotifyApi.TrackObjectFull): IMu
     artistas: musica.artists.map(a => ({id: a.id, nome: a.name})),
     tempo: millisToMinutesAndSeconds(musica.duration_ms),
     titulo: musica.name
+  }
+}
+
+export function SpotifySingleArtistaParaArtista(artista: SpotifyApi.SingleArtistResponse): IArtista {
+
+  if(!artista) {
+    return newArtista();
+  }
+
+  return {
+    id: artista.id,
+    nome: artista.name,
+    imagemUrl: artista.images.shift().url,
+    musicas: []
+  }
+}
+
+export function SpotifySinglePlaylistParaPlaylist(playlist: SpotifyApi.SinglePlaylistResponse): IPlaylist {
+
+  if(!playlist) {
+    return newPlaylist();
+  }
+
+  return {
+    id: playlist.id,
+    nome: playlist.name,
+    imageUrl: playlist.images.shift().url,
+    musicas: []
   }
 }
 

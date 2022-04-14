@@ -30,6 +30,11 @@ export class PainelEsquerdoComponent implements OnInit {
 
   botaoClick(descricao: string) {
     this.menuSelecionado = descricao;
-    this.router.navigateByUrl(`player/${descricao.toLowerCase()}`)
+    this.router.navigateByUrl(`player/${descricao.toLowerCase()}`);
+  }
+
+  irParaPlaylist(playlistId: string) {
+    this.menuSelecionado = playlistId;
+    this.router.navigateByUrl(`player/lista/playlist/${playlistId}`);
   }
 }
